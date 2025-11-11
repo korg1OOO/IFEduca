@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* IF Educa Design System - Modo Claro */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Verde IFPR primário */
+    --primary: 145 100% 29%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Vermelho acento IFPR */
+    --accent: 357 81% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Secundário - tons de verde */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 46%;
+
+    --destructive: 357 81% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 145 100% 29%;
+
+    --radius: 0.5rem;
+
+    /* Cores customizadas IF Educa */
+    --success: 145 100% 29%;
+    --warning: 45 93% 47%;
+    --info: 201 96% 32%;
+    
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, hsl(145 100% 29%) 0%, hsl(145 100% 24%) 100%);
+    --gradient-header: linear-gradient(90deg, hsl(145 100% 29%) 0%, hsl(145 100% 24%) 100%);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 145 100% 29%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 0 0% 91%;
+    --sidebar-ring: 145 100% 29%;
+  }
+
+  .dark {
+    /* IF Educa Design System - Modo Escuro */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 88%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 88%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 88%;
+
+    /* Verde IFPR ajustado para escuro */
+    --primary: 145 100% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Vermelho ajustado para escuro */
+    --accent: 357 100% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 88%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --destructive: 357 100% 62%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 145 100% 33%;
+
+    /* Cores customizadas modo escuro */
+    --success: 145 100% 33%;
+    --warning: 45 93% 55%;
+    --info: 201 96% 42%;
+
+    /* Gradientes modo escuro */
+    --gradient-primary: linear-gradient(135deg, hsl(145 100% 33%) 0%, hsl(145 100% 28%) 100%);
+    --gradient-header: linear-gradient(90deg, hsl(145 100% 33%) 0%, hsl(145 100% 28%) 100%);
+
+    /* Sidebar escuro */
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-primary: 145 100% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 88%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 145 100% 33%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-header {
+    background: var(--gradient-header);
+  }
+
+  .shadow-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
