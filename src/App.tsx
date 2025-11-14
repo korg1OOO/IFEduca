@@ -9,10 +9,12 @@ import { DashboardLayout } from "@/components/layout/DashboardLayout";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Avaliar from "./pages/Avaliar";
+import Configuracoes from "./pages/Configuracoes";
+import Feedbacks from "./pages/Feedbacks";
+import Relatorios from "./pages/Relatorios";
+import Usuarios from "./pages/Usuarios";
 import NotFound from "./pages/NotFound";
-
 const queryClient = new QueryClient();
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <ThemeProvider>
@@ -54,10 +56,7 @@ const App = () => (
                 path="/feedbacks"
                 element={
                   <DashboardLayout>
-                    <div className="text-center py-12">
-                      <h2 className="text-2xl font-bold mb-4">Feedbacks</h2>
-                      <p className="text-muted-foreground">Página em desenvolvimento</p>
-                    </div>
+                    <Feedbacks />
                   </DashboardLayout>
                 }
               />
@@ -65,10 +64,7 @@ const App = () => (
                 path="/relatorios"
                 element={
                   <DashboardLayout>
-                    <div className="text-center py-12">
-                      <h2 className="text-2xl font-bold mb-4">Relatórios</h2>
-                      <p className="text-muted-foreground">Página em desenvolvimento</p>
-                    </div>
+                    <Relatorios />
                   </DashboardLayout>
                 }
               />
@@ -76,8 +72,35 @@ const App = () => (
                 path="/configuracoes"
                 element={
                   <DashboardLayout>
+                    <Configuracoes />
+                  </DashboardLayout>
+                }
+              />
+              <Route
+                path="/usuarios"
+                element={
+                  <DashboardLayout>
+                    <Usuarios />
+                  </DashboardLayout>
+                }
+              />
+              <Route
+                path="/formularios"
+                element={
+                  <DashboardLayout>
                     <div className="text-center py-12">
-                      <h2 className="text-2xl font-bold mb-4">Configurações</h2>
+                      <h2 className="text-2xl font-bold mb-4">Formulários</h2>
+                      <p className="text-muted-foreground">Página em desenvolvimento</p>
+                    </div>
+                  </DashboardLayout>
+                }
+              />
+              <Route
+                path="/docentes"
+                element={
+                  <DashboardLayout>
+                    <div className="text-center py-12">
+                      <h2 className="text-2xl font-bold mb-4">Gestão de Docentes</h2>
                       <p className="text-muted-foreground">Página em desenvolvimento</p>
                     </div>
                   </DashboardLayout>
@@ -92,5 +115,4 @@ const App = () => (
     </ThemeProvider>
   </QueryClientProvider>
 );
-
 export default App;
