@@ -14,6 +14,11 @@ import Feedbacks from "./pages/Feedbacks";
 import Relatorios from "./pages/Relatorios";
 import Usuarios from "./pages/Usuarios";
 import NotFound from "./pages/NotFound";
+import Perfil from "./pages/Perfil";
+import Metricas from "./pages/Metricas";
+import Docentes from "./pages/Docentes";
+import Formularios from "./pages/Formularios";
+
 const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -45,10 +50,7 @@ const App = () => (
                 path="/metricas"
                 element={
                   <DashboardLayout>
-                    <div className="text-center py-12">
-                      <h2 className="text-2xl font-bold mb-4">Métricas</h2>
-                      <p className="text-muted-foreground">Página em desenvolvimento</p>
-                    </div>
+                    <Metricas />
                   </DashboardLayout>
                 }
               />
@@ -88,10 +90,7 @@ const App = () => (
                 path="/formularios"
                 element={
                   <DashboardLayout>
-                    <div className="text-center py-12">
-                      <h2 className="text-2xl font-bold mb-4">Formulários</h2>
-                      <p className="text-muted-foreground">Página em desenvolvimento</p>
-                    </div>
+                    <Formularios />
                   </DashboardLayout>
                 }
               />
@@ -99,13 +98,18 @@ const App = () => (
                 path="/docentes"
                 element={
                   <DashboardLayout>
-                    <div className="text-center py-12">
-                      <h2 className="text-2xl font-bold mb-4">Gestão de Docentes</h2>
-                      <p className="text-muted-foreground">Página em desenvolvimento</p>
-                    </div>
+                    <Docentes />
                   </DashboardLayout>
                 }
               />
+              <Route
+                path="/perfil"
+                element={
+                  <DashboardLayout>
+                    <Perfil />
+                  </DashboardLayout>
+              }
+            />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
